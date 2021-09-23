@@ -1,4 +1,4 @@
-package com.technews.technewsjavaapi.model;
+package com.technews.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -23,7 +23,7 @@ public class User {
     private List<Post> posts;
     // Need to use FetchType.LAZY to resolve multiple bags exception
     @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Vote> votes;
+    private List<com.technews.model.Vote> votes;
     // Need to use FetchType.LAZY to resolve multiple bags exception
     @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Comment> comments;
@@ -83,11 +83,11 @@ public class User {
         this.posts = posts;
     }
 
-    public List<Vote> getVotes() {
+    public List<com.technews.model.Vote> getVotes() {
         return votes;
     }
 
-    public void setVotes(List<Vote> votes) {
+    public void setVotes(List<com.technews.model.Vote> votes) {
         this.votes = votes;
     }
 
